@@ -1,9 +1,9 @@
 package nik.borisov.simplecompass
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.RotateAnimation
+import androidx.appcompat.app.AppCompatActivity
 import nik.borisov.simplecompass.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private val compass by lazy {
         SampleCompass(
             this
-        ) {azimuth ->
+        ) { azimuth ->
             runOnUiThread {
                 rotateLimb(azimuth)
             }
