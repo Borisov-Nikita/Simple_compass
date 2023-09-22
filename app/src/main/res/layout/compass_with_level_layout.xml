@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/compass_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:parentTag="android.widget.RelativeLayout">
+
+    <nik.borisov.simplecompass.view.DirectionView
+        android:id="@+id/direction_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <nik.borisov.simplecompass.view.CompassLimbView
+        android:id="@+id/compass_limb_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <nik.borisov.simplecompass.view.CompassPointerView
+        android:id="@+id/compass_pointer_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <nik.borisov.simplecompass.view.BubbleLevelView
+        android:id="@+id/bubble_level_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</merge>

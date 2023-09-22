@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Simple compass</string>
+
+    <string name="north">N</string>
+    <string name="south">S</string>
+    <string name="west">W</string>
+    <string name="east">E</string>
+    <string name="northeast">NE</string>
+    <string name="northwest">NW</string>
+    <string name="southeast">SE</string>
+    <string name="southwest">SW</string>
 </resources>

@@ -1,26 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/main_activity_layout_padding"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/compass_limb_image_view"
+    <nik.borisov.simplecompass.view.CompassWithLevelView
+        android:id="@+id/compass_with_level_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:contentDescription="@null"
-        android:padding="@dimen/compass_limb_padding"
-        android:src="@drawable/compass_limb"/>
-
-    <ImageView
-        android:id="@+id/compass_arrow_image_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:contentDescription="@null"
-        android:src="@drawable/compass_pointer"/>
-
-</RelativeLayout>
+        android:padding="16dp"
+        android:textSize="32sp"
+        app:direction_padding_between="32dp"
+        app:pointer_alignment="center"
+        app:pointer_size_ratio="0.5" />
+</FrameLayout>

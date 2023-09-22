@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CompassWithLevelView">
+        <attr name="pointer_size_ratio" format="float" />
+        <attr name="pointer_alignment" format="integer">
+            <enum name="top" value="-1" />
+            <enum name="center" value="0" />
+            <enum name="bottom" value="1" />
+        </attr>
+        <attr name="direction_padding_between" format="dimension" />
+        <attr name="android:textSize" />
+    </declare-styleable>
+</resources>

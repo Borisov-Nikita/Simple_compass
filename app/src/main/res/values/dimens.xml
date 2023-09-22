@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="main_activity_layout_padding">16dp</dimen>
-    <dimen name="compass_limb_padding">16dp</dimen>
-</resources>
