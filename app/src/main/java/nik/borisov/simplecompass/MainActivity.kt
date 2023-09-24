@@ -1,9 +1,9 @@
 package nik.borisov.simplecompass
 
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.material.snackbar.Snackbar
 import nik.borisov.simplecompass.databinding.ActivityMainBinding
 import nik.borisov.simplecompass.viewmodel.CompassViewModel
 
@@ -17,9 +17,7 @@ class MainActivity : AppCompatActivity() {
         ViewModelProvider(this)[CompassViewModel::class.java]
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+    private fun observeViewModel() {
         viewModel.orientation.observe(this) { compassAndLevelValues ->
             binding.compassWithLevelView.onOrientationChanged(
                 compassAndLevelValues.biasX,
@@ -31,19 +29,30 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun showUnsupportedMessage() {
+        AlertDialog.Builder(this)
+            .setCancelable(false)
+            .setTitle(getString(R.string.oops))
+            .setMessage(getString(R.string.unsupported))
+            .setPositiveButton(getString(R.string.close_app)) { _, _ ->
+                finish()
+            }
+            .create()
+            .show()
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+        observeViewModel()
+    }
+
     override fun onResume() {
         super.onResume()
         val isSensorsSupported = viewModel.start()
 
-        //TODO add dialog
         if (!isSensorsSupported) {
-            Snackbar.make(
-                binding.root,
-                "Your device doesn't supported this app.",
-                Snackbar.LENGTH_INDEFINITE
-            ).setAction("Ok") {
-                finish()
-            }.show()
+            showUnsupportedMessage()
         }
     }
 
